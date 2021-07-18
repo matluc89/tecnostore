@@ -1,0 +1,57 @@
+@import "variables";
+
+header {
+    section {
+        .header__logo {
+          width: 150px;
+            border-radius: 100%;
+        }  
+        .header__titulos {
+            color: $colorTit;
+        }
+    }
+    nav {
+        ul {
+            background-color: $colorNav;
+            list-style-type: none;
+            li {
+                padding: $tamanoBase*1;
+                font-size: $tamanoBase*1;
+                display: inline-block;
+                font-weight: bold;
+                color: $colorTit;
+                position: relative;
+            
+                &:hover {
+                    background-color: $colorNavSel;  
+                }   
+                &:hover ul{
+                    display: block;
+                    z-index: 1;
+                }
+                a {
+                    text-decoration: none;
+                    color: $colorTit;
+                    &:hover {
+                        color: rgb(59, 59, 59);
+                    }
+                }
+                ul {
+                    position: absolute;
+                    display: none;
+                    li {
+                        display: block;
+                        margin: $tamanoBase*1;
+                        a {
+                            text-decoration: none;
+                            color: $colorTit; 
+                            &:hover {
+                                color: rgb(59, 59, 59);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

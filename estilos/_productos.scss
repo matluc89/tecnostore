@@ -1,0 +1,29 @@
+@import "variables";
+
+body{
+    .section__grupoProductos {
+        margin: $tamanoBase*2;
+    }
+      
+    .div__productos {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+      
+    .div__imgProductos {
+        opacity: 0.8;
+        width: $tamanoBase*20;
+        padding: $tamanoBase;
+        margin: $tamanoBase;
+        border: $tamanoBase/5 black solid;
+        &:hover {
+            opacity: 1;
+            border: $tamanoBase/5 rgb(97, 97, 97) solid;
+            transform: scale(1.1, 1.1);
+        }
+    }
+}

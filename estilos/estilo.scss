@@ -1,0 +1,103 @@
+
+@import "header";
+@import "variables";
+@import "productos";
+@import "nosotros";
+@import "medios";
+@import "contacto";
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+@mixin imgProductos ($color){
+    opacity: 0.8;
+    width: $tamanoBase*20;
+    padding: $tamanoBase;
+    margin: $tamanoBase;
+    border: $tamanoBase/5 $color;
+    &:hover {
+        opacity: 1;
+        @if $color == $colorRob {
+            border: $tamanoBase/4 $color solid;
+        }
+        @else if $color == $colorFre{
+            border: $tamanoBase/5 $color solid;
+        }
+        @else if $color == $colorFor{
+            border: $tamanoBase/6 $color solid;
+        }
+        @else{
+            border: $tamanoBase/10 #000000 solid;
+        }
+    }    
+}
+
+body {
+    font-family: $fontBody;
+    font-weight: 600;
+    background-image: url(../imagenes/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    .div__carouselSize{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .div__imgRoblox{
+        @include imgProductos ($colorRob);
+    }
+    .div__imgFreefire{
+        @include imgProductos ($colorFre);
+    }
+    .div__imgFortnite{
+        @include imgProductos ($colorFor);
+    }
+    .section__video{
+        padding: 3rem;
+        border-bottom: solid 0.1rem;
+        .video__roblox{
+            width: 50%;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .section__reseñasChat {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            align-items: start;
+        }
+    }
+          
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .section__reseñasChat {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            align-items: start;
+        }
+    }
+          
+    @media only screen and (min-width: 1024px) {
+        .section__reseñasChat {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            align-items: start;
+        }
+    }   
+    .div__titulos {
+        color: $colorTit;
+    }
+    footer{
+        background: $colorFooter;
+    
+        .footer__imagenRedes{
+            width: 40px;
+        }
+
+    }
+}
